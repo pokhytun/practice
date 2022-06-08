@@ -11,27 +11,27 @@
 				<form action="{{ route('register') }}" method="POST">
                     @csrf
 
-					<input type="text" name="login" placeholder="Login" value="{{ old('login') }}" />
+					<input @error('login') class="autu__input_error" @enderror type="text" name="login" placeholder="Login" value="{{ old('login') }}" />
                     @error('login')
                         <span class="auth__message">! {{ $message }}</span>
                     @enderror
 
-					<input type="email" name="email" placeholder="Email Address" value="{{ old('email') }}" />
+					<input @error('email') class="autu__input_error" @enderror type="email" name="email" placeholder="Email Address" value="{{ old('email') }}" />
                     @error('email')
                         <span class="auth__message">! {{ $message }}</span>
                     @enderror
 
-					<input type="password" name="password" placeholder="Password"/>
+					<input @error('password') class="autu__input_error" @enderror type="password" name="password" placeholder="Password"/>
+                    <input @error('password-confirm') class="autu__input_error" @enderror id="password-confirm" type="password"  name="password_confirmation"  placeholder="Password confirmation">
                     @error('password')
                         <span class="auth__message">! {{ $message }}</span>
                     @enderror
-                    <input id="password-confirm" type="password"  name="password_confirmation"  placeholder="Password confirmation">
 
 					<button type="submit" class="btn btn-default">Signup</button>
 				</form>
                 <div class="auth-block auth-block_margin">
                     <span>Have an account?</span>
-                    <a href="#" class="auth__link"> Sign in</a>
+                    <a href="{{route('login')}}" class="auth__link"> Sign in</a>
                 </div>
         </div><!--/login form-->
     </div>

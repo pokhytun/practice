@@ -13,6 +13,10 @@ body {
   font-weight:400px;
 }
 
+input{
+  border: none;
+}
+
 ul li {
   list-style: none;
 }
@@ -321,6 +325,20 @@ ul.sub-menu {
 
 .navbar-nav li ul.sub-menu li a:hover{
     color: #FDB45E;
+}
+
+.navbar_auth{
+  display: flex;
+  align-items: baseline;
+}
+
+.navbar_auth input{
+  background: none;
+  transition: .5s;
+}
+
+.navbar_auth input:hover{
+  color: #FDB45E;
 }
 
 .fa-angle-down{
@@ -1436,12 +1454,15 @@ h2.title {
 /*************************
 *******login page CSS******
 **************************/
+.autu__input_error{
+  border: 1px solid #f32906;
+}
+
 
 #form {
   display: flex;
   justify-content: center;
   margin-bottom: 185px;
-  margin-top: 185px;
   overflow: hidden;
 }
 
@@ -1468,7 +1489,6 @@ h2.title {
 
 .login-form form input, .signup-form form input {
   background: #F0F0E9;
-  border: medium none;
   color: #696763;
   display: block;
   font-family: 'Roboto', sans-serif;
