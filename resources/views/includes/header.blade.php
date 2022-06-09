@@ -24,7 +24,7 @@
             </div>
         </div>
     </div><!--/header_top-->
-    
+
     <div class="header-middle"><!--header-middle-->
         <div class="container">
             <div class="row">
@@ -32,7 +32,7 @@
                     <div class="logo pull-left">
                         <a href="index.html"><img src="images/home/logo.png" alt="" /></a>
                     </div>
-                    
+
                 </div>
                 <div class="col-sm-8">
                     <div class="shop-menu pull-right">
@@ -40,7 +40,7 @@
                             <li><a href="cart.html"><i class="fa fa-shopping-cart"></i> Cart</a></li>
 
                             @auth
-                                <li><a href="#"><i class="fa fa-user"></i> {{ Auth()->user()->login }} </a></li> 
+                                <li><a href="#"><i class="fa fa-user"></i> {{ Auth()->user()->login }} </a></li>
                                 <li>
                                     <form action=" {{route('logout')}} " method="POST">
                                         @csrf
@@ -48,7 +48,7 @@
                                         <input type="submit" value="logout">
                                     </form>
                                 </li>
-                               
+
 
                             @endauth
                             @guest
@@ -76,7 +76,7 @@
                     <div class="mainmenu pull-left">
                         <ul class="nav navbar-nav collapse navbar-collapse">
                             <li><a href="index.html" class="active">Home</a></li>
-                            <li class="dropdown"><a href="#">Shop</a></li>
+                            <li class="dropdown"><a href="{{ route('products.index') }}">Shop</a></li>
                             <li><a href="contact-us.html">Contact</a></li>
                         </ul>
                     </div>
