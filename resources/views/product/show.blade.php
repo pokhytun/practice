@@ -13,7 +13,7 @@
                     <h3>ZOOM</h3>
                 </div>
                 <div id="similar-product" class="carousel slide" data-ride="carousel">
-                    
+
                       <!-- Wrapper for slides -->
                         <div class="carousel-inner">
                             <div class="item active">
@@ -31,7 +31,7 @@
                               <a href=""><img src="images/product-details/similar2.jpg" alt=""></a>
                               <a href=""><img src="images/product-details/similar3.jpg" alt=""></a>
                             </div>
-                            
+
                         </div>
 
                       <!-- Controls -->
@@ -47,11 +47,11 @@
             <div class="col-sm-7">
                 <div class="product-information"><!--/product-information-->
                     <img src="images/product-details/new.jpg" class="newarrival" alt="">
-                    <h2>Anne Klein Sleeveless Colorblock Scuba</h2>
-                    <p>Web ID: 1089772</p>
+                    <h2>{{ $product->title }}</h2>
+                    <p>Web ID: {{ $product->id }}</p>
 
                     <span>
-                        <span>US $59</span>
+                        <span>{{ $product->price }}$</span>
                         <label>Quantity:</label>
                         <input type="text" value="3">
                         <button type="button" class="btn btn-fefault cart">
@@ -59,22 +59,20 @@
                             Add to cart
                         </button>
                     </span>
-                    <p><b>Availability:</b> In Stock</p>
-                    <p><b>Condition:</b> New</p>
-                    <p><b>Brand:</b> E-SHOPPER</p>
-                    <p class="subtitle">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eligendi sapiente quam veniam labore cum minus, deserunt dicta quasi a eum facere fugit harum eius debitis facilis optio veritatis est quae.</p>
+                    <p><b>Category:</b> {{ $product->category->title }}</p>
+                    <p class="subtitle">{{ $product->description }}</p>
                 </div><!--/product-information-->
             </div>
         </div><!--/product-details-->
-        
-       
-        
+
+
+
         <div class="recommended_items"><!--recommended_items-->
             <h2 class="title text-center">recommended items</h2>
-            
+
             <div id="recommended-item-carousel" class="carousel slide" data-ride="carousel">
                 <div class="carousel-inner">
-                    <div class="item">	
+                    <div class="item">
                         <div class="col-sm-4">
                             <div class="product-image-wrapper">
                                 <div class="single-products">
@@ -112,7 +110,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="item active">	
+                    <div class="item active">
                         <div class="col-sm-4">
                             <div class="product-image-wrapper">
                                 <div class="single-products">
@@ -156,10 +154,10 @@
                   </a>
                   <a class="right recommended-item-control" href="#recommended-item-carousel" data-slide="next">
                     <i class="fa fa-angle-right"></i>
-                  </a>			
+                  </a>
             </div>
         </div><!--/recommended_items-->
-        
+
     </div>
 </div>
 

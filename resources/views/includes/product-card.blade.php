@@ -11,7 +11,7 @@
                 <div class="overlay-content">
                     <h2>{{ $price }}$</h2>
                     <div>
-                        <a href="#"> {{ $title }}</a>
+                        <a href="{{ route('products.show' , $product->id) }}"> {{ $title }}</a>
                     </div>
 
                     <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
