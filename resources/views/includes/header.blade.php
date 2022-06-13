@@ -82,9 +82,9 @@
                     </div>
                 </div>
                 <div class="col-sm-3">
-                    <div class="search_box pull-right">
-                        <input type="text" placeholder="Search"/>
-                    </div>
+                    <form action="{{ route('products.index') }}" class="search_box pull-right">
+                        <input name="search_field" type="text" @if(isset($_GET['search_field'])) value="{{$_GET['search_field']}}" @endif placeholder="Search"/>
+                    </form>
                 </div>
             </div>
         </div>
