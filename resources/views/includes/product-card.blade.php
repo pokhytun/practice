@@ -2,7 +2,12 @@
     <div class="product-image-wrapper">
         <div class="single-products">
             <div class="productinfo text-center">
-                <img src="{{asset('images/products/default.jpg')}}" alt="">
+                @if($product->images->count())
+                    <img src="{{asset($product->images->random()->path)}}" alt="">
+                @else
+                    <img src="{{asset('images/products/default.jpg')}}" alt="">
+                @endif
+
                 <h2>{{$price = $product->price }}$</h2>
                 <p>{{$title = $product->title }}</p>
                 <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>

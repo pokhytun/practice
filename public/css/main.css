@@ -1073,6 +1073,11 @@ h2.title {
   overflow: hidden;
 }
 
+.slide-photo{
+    height: 84px;
+    width: 84px;
+}
+
 #recommended-item-carousel .carousel-inner .item {
   padding-left: 0;
 }

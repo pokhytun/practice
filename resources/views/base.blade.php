@@ -16,7 +16,7 @@
     <!--[if lt IE 9]>
     <script src="js/html5shiv.js"></script>
     <script src="js/respond.min.js"></script>
-    <![endif]-->       
+    <![endif]-->
     <link rel="shortcut icon" href="{{asset('images/ico/favicon.ico')}}">
     <link rel="apple-touch-icon-precomposed" sizes="144x144" href="{{asset('images/ico/apple-touch-icon-144-precomposed.png')}}">
     <link rel="apple-touch-icon-precomposed" sizes="114x114" href="{{asset('images/ico/apple-touch-icon-114-precomposed.png')}}">
@@ -27,12 +27,13 @@
 <body>
 
     @include('includes.header')
-    
+
     @yield('content')
 
 	@include('includes.footer')
 
     <script src="{{asset('js/jquery.js')}}"></script>
+    <script src="{{asset('js/slider.js')}}"></script>
 	<script src="{{asset('js/bootstrap.min.js')}}"></script>
 	<script src="{{asset('js/jquery.scrollUp.min.js')}}"></script>
 	<script src="{{asset('js/price-range.js')}}"></script>

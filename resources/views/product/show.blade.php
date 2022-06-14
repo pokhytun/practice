@@ -9,38 +9,42 @@
         <div class="product-details"><!--product-details-->
             <div class="col-sm-5">
                 <div class="view-product">
-                    <img src="images/product-details/1.jpg" alt="">
+                    @if($productImages = $product->images->count())
+                        <img class="main-photo" src="{{asset($product->images->random()->path)}}" alt="">
+                    @else
+                        <img class="main-photo" src="{{asset('images/products/default.jpg')}}" alt="">
+                    @endif
                     <h3>ZOOM</h3>
                 </div>
                 <div id="similar-product" class="carousel slide" data-ride="carousel">
 
-                      <!-- Wrapper for slides -->
-                        <div class="carousel-inner">
-                            <div class="item active">
-                              <a href=""><img src="images/product-details/similar1.jpg" alt=""></a>
-                              <a href=""><img src="images/product-details/similar2.jpg" alt=""></a>
-                              <a href=""><img src="images/product-details/similar3.jpg" alt=""></a>
-                            </div>
-                            <div class="item">
-                              <a href=""><img src="images/product-details/similar1.jpg" alt=""></a>
-                              <a href=""><img src="images/product-details/similar2.jpg" alt=""></a>
-                              <a href=""><img src="images/product-details/similar3.jpg" alt=""></a>
-                            </div>
-                            <div class="item">
-                              <a href=""><img src="images/product-details/similar1.jpg" alt=""></a>
-                              <a href=""><img src="images/product-details/similar2.jpg" alt=""></a>
-                              <a href=""><img src="images/product-details/similar3.jpg" alt=""></a>
-                            </div>
+                       <!-- Wrapper for slides -->
+								    <div class="carousel-inner">
 
-                        </div>
+                                        @foreach ($images as $chunk)
 
+                                            <div class="item @if($loop->first) active @endif">
+                                                @foreach ($chunk as $photo)
+
+                                                    <a href="#"><img class="slide-photo" src="{{asset($photo->path)}}" alt=""></a>
+
+                                                @endforeach
+                                            </div>
+
+                                            @endforeach
+
+									</div>
+
+                      @if($productImages > $sizeSlider)
                       <!-- Controls -->
-                      <a class="left item-control" href="#similar-product" data-slide="prev">
-                        <i class="fa fa-angle-left"></i>
-                      </a>
-                      <a class="right item-control" href="#similar-product" data-slide="next">
-                        <i class="fa fa-angle-right"></i>
-                      </a>
+                        <a class="left item-control" href="#similar-product" data-slide="prev">
+                            <i class="fa fa-angle-left"></i>
+                        </a>
+                        <a class="right item-control" href="#similar-product" data-slide="next">
+                            <i class="fa fa-angle-right"></i>
+                        </a>
+                      @endif
+
                 </div>
 
             </div>
