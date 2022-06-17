@@ -2582,3 +2582,12 @@ h2.title {
 }
 
 
+.message{
+    padding: 20px 30px;
+    background: rgb(49, 199, 3);
+    position: fixed;
+    top: 5%;
+    right: 1%;
+    color: #fff;
+    border-radius: 10px;
+}

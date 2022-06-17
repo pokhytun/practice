@@ -12,6 +12,7 @@ $(document).ready(function(){
             },
             success: function (response) {
                 updateCartSize(response.cartSize);
+                flushMessage('Added to cart');
             }
 
         })
@@ -117,4 +118,19 @@ function updateTotalPrice(total){
     $('.total-price').html(total + '$');
 }
 
+function flushMessage(text){
 
+    $('body').append(
+        $(`<div class="message">${text}</div>`)
+    )
+
+    setTimeout(function(){
+
+        $('.message').animate({ right: -15 + '%', }, 1000, function() {
+
+            $(this).remove()
+
+        });
+
+    }, 1000);
+}
