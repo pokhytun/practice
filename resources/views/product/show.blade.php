@@ -56,12 +56,10 @@
 
                     <span>
                         <span>{{ $product->price }}$</span>
-                        <label>Quantity:</label>
-                        <input type="text" value="3">
-                        <button type="button" class="btn btn-fefault cart">
+                        <a href="{{ route('cart.add' , $product->id) }}" class="add-to-cart btn btn-fefault cart" data-id="{{$product->id}}">
                             <i class="fa fa-shopping-cart"></i>
                             Add to cart
-                        </button>
+                        </a>
                     </span>
                     <p><b>Category:</b> {{ $product->category->title }}</p>
                     <p class="subtitle">{{ $product->description }}</p>

@@ -37,7 +37,7 @@
                 <div class="col-sm-8">
                     <div class="shop-menu pull-right">
                         <ul class="nav navbar-nav navbar_auth">
-                            <li><a href="{{ route('cart.index') }}"><i class="fa fa-shopping-cart"></i> Cart</a></li>
+                            <li><a href="{{ route('cart.index') }}"><i class="fa fa-shopping-cart"></i> Cart <span id="cart-size"> @if(session('cart'))  {{ count(session('cart')) }} @else 0 @endif  </span></a></li>
 
                             @auth
                                 <li><a href="#"><i class="fa fa-user"></i> {{ Auth()->user()->login }} </a></li>

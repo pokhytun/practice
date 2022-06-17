@@ -19,7 +19,7 @@
                         <a href="{{ route('products.show' , $product->id) }}"> {{ $title }}</a>
                     </div>
 
-                    <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+                    <a href="#"  data-id="{{ $product->id }}" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
                 </div>
             </div>
         </div>

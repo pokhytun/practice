@@ -945,6 +945,14 @@ h2.title {
   width: 100%;
 }
 
+#cart-size{
+    padding: 1px 6px;
+    font-size: 15px;
+    background: #FE980F;
+    color: #fff;
+    border-radius: 50%;
+}
+
 .product-overlay .add-to-cart {
   background:#fff;
   border: 0 none;
@@ -1604,6 +1612,12 @@ h2.title {
 
 .breadcrumbs .breadcrumb > li + li:before {
   content: " ";
+}
+
+.total-price{
+    font-size: 25px;
+    color: #FE980F;
+    float: right;
 }
 
 #cart_items .cart_info {
