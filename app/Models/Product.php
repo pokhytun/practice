@@ -22,4 +22,6 @@ class Product extends Model
     public function scopeFilter( Builder $builder, QueryFilter $filter){
         return $filter->apply($builder);
     }
+
+
 }

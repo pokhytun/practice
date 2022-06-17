@@ -23,7 +23,14 @@ class ProductController extends Controller
         $sizeSlider = 3;
         $images = $product->images->chunk($sizeSlider);
 
-        return view('product.show', compact('product', 'images' , 'sizeSlider'));
+        $similarProducts = Product::where('category_id' , $product->category_id)->where('id', '!=', $product->id)->get();
+        if($similarProducts->count() >= 6 ){
+            $similarProducts = $similarProducts->random(6)->chunk(3);
+        }else{
+            $similarProducts = null;
+        }
+
+        return view('product.show', compact('product', 'images' , 'sizeSlider', 'similarProducts'));
     }
 
 }
