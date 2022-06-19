@@ -39,6 +39,7 @@ $(document).ready(function(){
                 removeItemFromCart(elm);
                 updateCartSize(response.cartSize);
                 updateTotalPrice(response.totalPrice);
+                checkCart(response.totalPrice);
             }
 
         })
@@ -133,4 +134,10 @@ function flushMessage(text){
         });
 
     }, 1000);
+}
+
+function checkCart(price){
+    if(!price){
+        $('.cart-container').replaceWith('<h2 class="title text-center">Empty</h2>');
+    }
 }

@@ -1,6 +1,6 @@
 <tr class="cart-row">
     <td class="cart_product">
-        <a href="#"><img src="images/cart/three.png" alt=""></a>
+        <img class="cart-photo" src="{{ $product['image'] }}" alt="">
     </td>
     <td class="cart_description">
         <h4><a href="{{ route('products.show' , $product['id']) }}">{{ $product['title'] }}</a></h4>

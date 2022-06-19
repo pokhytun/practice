@@ -75,7 +75,7 @@
                     </div>
                     <div class="mainmenu pull-left">
                         <ul class="nav navbar-nav collapse navbar-collapse">
-                            <li><a href="index.html" class="active">Home</a></li>
+                            <li><a href="index.html">Home</a></li>
                             <li class="dropdown"><a href="{{ route('products.index') }}">Shop</a></li>
                             <li><a href="contact-us.html">Contact</a></li>
                         </ul>

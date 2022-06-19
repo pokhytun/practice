@@ -953,6 +953,11 @@ h2.title {
     border-radius: 50%;
 }
 
+.cart-photo{
+    height: 60px;
+    width: 60px;
+}
+
 .product-overlay .add-to-cart {
   background:#fff;
   border: 0 none;

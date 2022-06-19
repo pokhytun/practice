@@ -17,8 +17,13 @@ class CartService {
     }
 
     public function addItemInCart($id){
-
         $product = Product::findOrFail($id);
+
+        $photo = 'images/products/default.jpg';
+
+        if($path = $product->iamges){
+            $photo = $path->random()->path;
+        }
 
         $cart = session()->get('cart', []);
 
@@ -33,7 +38,7 @@ class CartService {
                 "title" => $product->title,
                 "quantity" => 1,
                 "price" => $product->price,
-                "image" => 'path'
+                "image" => $photo
             ];
         }
 
@@ -54,8 +59,11 @@ class CartService {
     public function totalPrice(){
 
         $price = 0;
-        foreach(session('cart') as $item){
-            $price += $item['quantity'] * $item['price'];
+
+        if(session('cart')){
+            foreach(session('cart') as $item){
+                $price += $item['quantity'] * $item['price'];
+            }
         }
 
         return $price;

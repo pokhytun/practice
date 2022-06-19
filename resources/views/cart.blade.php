@@ -4,8 +4,8 @@
 
 @section('content')
 <section id="cart_items">
-    <div class="container">
-        @if(count($products))
+    <div class="container cart-container">
+        @if($products)
             <div class="table-responsive cart_info">
                 <table class="table table-condensed">
                     <thead>
@@ -19,12 +19,9 @@
                         </tr>
                     </thead>
                     <tbody>
-
-                        @if($products)
-                            @foreach ($products as $product)
-                                @include('includes.cart-item')
-                            @endforeach
-                        @endif
+                        @foreach ($products as $product)
+                            @include('includes.cart-item')
+                        @endforeach
                     </tbody>
                 </table>
                 <span class="total-price">{{ $totalPrice }}$</span>
