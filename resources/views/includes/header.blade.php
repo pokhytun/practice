@@ -40,7 +40,7 @@
                             <li><a href="{{ route('cart.index') }}"><i class="fa fa-shopping-cart"></i> Cart <span id="cart-size"> @if(session('cart'))  {{ count(session('cart')) }} @else 0 @endif  </span></a></li>
 
                             @auth
-                                <li><a href="#"><i class="fa fa-user"></i> {{ Auth()->user()->login }} </a></li>
+                                <li><a href="{{ route('order.index' )}}"><i class="fa fa-user"></i> {{ Auth()->user()->login }} </a></li>
                                 <li>
                                     <form action=" {{route('logout')}} " method="POST">
                                         @csrf

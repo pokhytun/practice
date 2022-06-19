@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\OrderController;
 use Illuminate\Support\Facades\Route;
 
 Route::view('/' , 'home');
@@ -14,6 +15,8 @@ Route::get('/cart', [CartController::class, 'index'])->name('cart.index');
 Route::get('add-to-cart/{id}', [CartController::class, 'addToCart'])->name('cart.add');
 Route::delete('remove-from-cart/{id}', [CartController::class, 'removeFromCart'])->name('cart.remove-item');
 Route::patch('update-cart', [CartController::class, 'update'])->name('cart.update');
+
+Route::get('/order', [OrderController::class , 'index'])->name('order.index');
 
 Auth::routes();
 
