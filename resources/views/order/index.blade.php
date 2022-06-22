@@ -4,17 +4,23 @@
 
 @section('content')
     <div class="container">
-        <div class="order">
-            <ul class="order-list">
-                <li class="order-list__item">
-                    <div>Data: </div>
-                    <div>Quantity: </div>
-                    <div>Total Price: </div>
-                </li>
-            </ul>
+        @if($orders->count())
+            <div class="order">
+                <ul class="order-list">
 
-            @include('includes.pay-check')
-        </div>
+                    @foreach ($orders as $order)
+                        <li class="order-list__item" data-id="{{ $order->id }}">
+                            <div>Data: {{ $order->created_at->format('d.m.Y'); }}</div>
+                            <div>{{ $order->products_sum_product_orderquantity }} products</div>
+                       </li>
+                    @endforeach
+
+                </ul>
+                    @include('includes.pay-check', ['order' => $orders->first()])
+                </div>
+        @else
+            <h2 class="title text-center">Empty</h2>
+        @endif
 
     </div>
 @endsection

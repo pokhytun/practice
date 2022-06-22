@@ -26,9 +26,14 @@
                 </table>
                 <span class="total-price">{{ $totalPrice }}$</span>
             </div>
+            <form action="{{ route('order.store') }}" method="post">
+                @csrf
+                <input type="submit" value="Order" class="btn btn-default">
+            </form>
         @else
         <h2 class="title text-center">Empty</h2>
         @endif
+
     </div>
 </section>
 @endsection

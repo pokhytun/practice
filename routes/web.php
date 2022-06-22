@@ -12,11 +12,17 @@ Route::get('/products{filter?}' , [ProductController::class, 'index'])->name('pr
 Route::get('/products/{product}' , [ProductController::class, 'show'])->name('products.show');
 
 Route::get('/cart', [CartController::class, 'index'])->name('cart.index');
+
 Route::get('add-to-cart/{id}', [CartController::class, 'addToCart'])->name('cart.add');
 Route::delete('remove-from-cart/{id}', [CartController::class, 'removeFromCart'])->name('cart.remove-item');
 Route::patch('update-cart', [CartController::class, 'update'])->name('cart.update');
 
-Route::get('/order', [OrderController::class , 'index'])->name('order.index');
+Route::group(['middleware' => 'auth'], function(){
+    Route::get('/orders', [OrderController::class , 'index'])->name('order.index');
+    Route::post('/orders', [OrderController::class, 'store'])->name('order.store');
+    Route::get('/orders/{order}', [OrderController::class , 'check'])->name('order.show');
+});
+
 
 Auth::routes();
 

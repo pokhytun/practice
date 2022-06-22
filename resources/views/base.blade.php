@@ -36,6 +36,7 @@
     <script src="{{asset('js/jquery.js')}}"></script>
     <script src="{{asset('js/cart.js')}}"></script>
     <script src="{{asset('js/slider.js')}}"></script>
+    <script src="{{asset('js/check.js')}}"></script>
 	<script src="{{asset('js/bootstrap.min.js')}}"></script>
 	<script src="{{asset('js/jquery.scrollUp.min.js')}}"></script>
 	<script src="{{asset('js/price-range.js')}}"></script>

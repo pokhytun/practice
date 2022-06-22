@@ -2604,16 +2604,43 @@ h2.title {
     justify-content: space-between;
 }
 
+
+
 .order-list{
     width: 50%;
     list-style-position:inside;
 }
+
 
 .check{
     width: 30%;
     border-radius: 10px;
     /* background: red; */
     border: 2px dashed #000;
+    position: relative;
+}
+
+.load{
+    visibility: hidden;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(255,255,255,.9);
+    z-index: 22;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.load-gif{
+    height: 150px;
+    width: 150px;
+}
+
+.load_active{
+    visibility:visible;
 }
 
 .check-container{
