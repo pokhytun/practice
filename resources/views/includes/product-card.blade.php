@@ -3,9 +3,9 @@
         <div class="single-products">
             <div class="productinfo text-center">
                 @if($product->images->count())
-                    <img src="{{asset($product->images->random()->path)}}" alt="">
+                    <img class="cart-photo" src="{{asset($product->images->random()->path)}}" alt="">
                 @else
-                    <img src="{{asset('images/products/default.jpg')}}" alt="">
+                    <img class="cart-photo" src="{{asset('images/products/default.jpg')}}" alt="">
                 @endif
 
                 <h2>{{$price = $product->price }}$</h2>

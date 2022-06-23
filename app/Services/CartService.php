@@ -21,9 +21,13 @@ class CartService {
 
         $photo = 'images/products/default.jpg';
 
-        if($path = $product->iamges){
-            $photo = $path->random()->path;
+        if($product->images->count()){
+            $photo = $product->images->random()->path;
         }
+
+        // if($path = $product->iamges){
+        //     $photo = $path->random()->path;
+        // }
 
         $cart = session()->get('cart', []);
 

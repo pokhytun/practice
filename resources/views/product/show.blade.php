@@ -10,7 +10,7 @@
             <div class="col-sm-5">
                 <div class="view-product">
                     @if($productImages = $product->images->count())
-                        <img class="main-photo" src="{{asset($product->images->random()->path)}}" alt="">
+                        <img class="main-photo productinfo_main-photo" src="{{asset($product->images->random()->path)}}" alt="">
                     @else
                         <img class="main-photo" src="{{asset('images/products/default.jpg')}}" alt="">
                     @endif
@@ -78,7 +78,7 @@
                         @foreach ($similarProducts as $chunk)
                             <div class="item @if($loop->first) active @endif">
 
-                                @foreach ($chunk as $product)
+                                @foreach ($chunk as $item)
                                     @include('includes.similar-product')
                                 @endforeach
 

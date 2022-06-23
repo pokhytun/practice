@@ -13,7 +13,6 @@ class CartController extends BaseController
         $products = session('cart');
         // session()->forget('cart');
         // session()->save(); //оновлення сесії
-
         $totalPrice = $this->service->totalPrice();
 
         return view('cart', compact('products', 'totalPrice'));

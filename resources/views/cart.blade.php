@@ -24,8 +24,9 @@
                         @endforeach
                     </tbody>
                 </table>
-                <span class="total-price">{{ $totalPrice }}$</span>
+
             </div>
+            <span class="total-price">Total price: {{ $totalPrice }}$</span>
             <form action="{{ route('order.store') }}" method="post">
                 @csrf
                 <input type="submit" value="Order" class="btn btn-default">
